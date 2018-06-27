@@ -18,3 +18,8 @@ Route::get('/', function () {
 Route::get('env', function () {
 	return getenv('DB_DATABASE');
 });
+
+Route::get('config', function () {
+    config(['app.timezone' => 'America/Chicago']);
+    return config('app.timezone');
+});
