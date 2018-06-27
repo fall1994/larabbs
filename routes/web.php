@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@root')->name('root');
 
 Route::get('env', function () {
 	return getenv('DB_DATABASE');
@@ -22,4 +20,8 @@ Route::get('env', function () {
 Route::get('config', function () {
     config(['app.timezone' => 'America/Chicago']);
     return config('app.timezone');
+});
+
+Route::get('test', function () {
+    return view('layouts.app');
 });
