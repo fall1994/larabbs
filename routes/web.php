@@ -30,7 +30,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('env', function () {
     return getenv('DB_DATABASE');
 });
-
+Route::get('now', function () {
+    return Carbon\Carbon::now()->toDateTimeString();
+});
 Route::get('config', function () {
     config(['app.timezone' => 'America/Chicago']);
     return config('app.timezone');
