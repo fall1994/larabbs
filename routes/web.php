@@ -35,3 +35,6 @@ Route::get('config', function () {
     config(['app.timezone' => 'America/Chicago']);
     return config('app.timezone');
 });
+
+
+Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
